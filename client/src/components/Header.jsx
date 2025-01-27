@@ -1,6 +1,7 @@
 import { Button, Navbar, TextInput } from "flowbite-react";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import {AiOutlineSearch} from 'react-icons/ai';
 import { DarkThemeToggle } from "flowbite-react";
 import {FaMoon} from 'react-icons/fa';
 
@@ -24,12 +25,12 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gray-800 dark:bg-gray-900 text-white shadow-lg">
+    <header className="bg-white dark:bg-black text-gray-800 dark:text-white shadow-lg">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
         <div className="text-2xl font-bold">
           <Link to="/" className="hover:text-red-500">
-            🎥 Book My Show
+            🎥 Booking App
           </Link>
         </div>
 
@@ -51,16 +52,17 @@ const Header = () => {
         </Button>
 
          {/* Search Bar */}
-         <div className="hidden md:flex items-center space-x-2 bg-gray-700 px-4 py-2 rounded-lg">
-          <input
+         <form>
+        <TextInput
             type="text"
-            placeholder="Search movies..."
-            className="bg-transparent text-white focus:outline-none"
-          />
-          <button className="text-red-500 hover:text-red-700">
-            🔍
-          </button>
-        </div>
+            placeholder="Search Movies..."
+            rightIcon={AiOutlineSearch}
+            className="hidden lg:inline"
+        />
+       </form>
+       <Button className="w-12 h-10 lg:hidden" color='gray' pill>
+        <AiOutlineSearch/>
+       </Button>
         <Link to='/sign-in'>
          <Button gradientDuoTone='purpleToBlue' pill>Sign In</Button>   
         </Link>
