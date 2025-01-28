@@ -6,6 +6,7 @@ import Profile from "./Pages/Profile";
 import About from "./Pages/About";
 import Header from "./components/Header";
 import Movies from "./Pages/Movies";
+import Footer from "./components/Footer";
 export default function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,7 @@ export default function App() {
          <Route path="/about" element={<About />} />
          <Route path="/movies" element={<Movies />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
